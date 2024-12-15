@@ -1,4 +1,13 @@
 %pip install joblib
+%pip install streamlit
+%pip install numpy
+%pip install pandas
+%pip install joblib
+%pip install tensorflow
+%pip install matplotlib
+%pip install seaborn
+%pip install scikit-learn
+%pip install shap
 
 import numpy as np
 import joblib
