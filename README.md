@@ -20,6 +20,12 @@ Aquest projecte s'ha desenvolupat durant una hackathon de 40 hores organi tzada 
 - [Aplicació Streamlit (Frontend)](./main/frontend.py)
 - [Aplicació Streamlit (Backend)](./main/backend.py)
 
+### Progres dels Models Productius
+
+![model graghs](models_graphs.png)
+
+
 ### UI Final
 
 - [Aplicació Streamlit](https://porksinbits.streamlit.app/)
+
