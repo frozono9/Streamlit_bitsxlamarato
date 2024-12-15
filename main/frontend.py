@@ -1,5 +1,5 @@
 import streamlit as st
-from .backend import process_input_data, predict_single_probabilities, get_importances, plot_shap
+from backend import process_input_data, predict_single_probabilities, get_importances, plot_shap
 import json
 from toPDF import MedicalReport
 import matplotlib.pyplot as plt
