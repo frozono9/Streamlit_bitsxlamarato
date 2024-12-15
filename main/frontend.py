@@ -1,7 +1,3 @@
-import sys
-import os
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
-
 import streamlit as st
 from backend import process_input_data, predict_single_probabilities, get_importances, plot_shap
 import json
