@@ -118,10 +118,14 @@ def preprocess_input(df):
         df['aguditzacions'] = df['Cause of death'].apply(lambda x: 0 if x == 'No death' or pd.isna(x) else 1)
     df['Associated lung cancer'].fillna(0, inplace=True)
     df['Other cancer'].fillna(0, inplace=True)
-    df['Progressive disease'].fillna(0, inplace=True)
+    if 'Progressive disease' in df.columns:
+        df['Progressive disease'].fillna(0, inplace=True)
+    if 'ProgressiveDisease' in df.columns:
+        df['ProgressiveDisease'].fillna(0, inplace=True)
     df['Genetic mutation studied in patient'].fillna(0, inplace=True)
     df['Mutation Type'].replace(-9, 0, inplace=True)
-    df['Death'].fillna('No', inplace=True)
+    if 'Death' in df.columns:
+        df['Death'].fillna('No', inplace=True)
     
     if 'Liver disease' in df.columns:
         df['Liver disease'] = df['Liver disease'].apply(lambda x: 0 if x == 'No' else 1).fillna(0).astype(int)
@@ -130,7 +134,7 @@ def preprocess_input(df):
         df['Hematologic Disease'] = df['Hematologic Disease'].apply(lambda x: 0 if x == 'No' else 1).fillna(0).astype(int)
     
     new_df = df[['fibrosis progression', 'TOBACCO', 'familiar aggregation', 'Comorbidities', 'Sex', 'Age at diagnosis', 
-                 'Genetic mutation studied in patient', 'Death', 'Progressive disease', 'Necessity of transplantation',
+                 'Genetic mutation studied in patient',
                  'UIP_Pattern', 'MPID_type', 'aguditzacions', 'Antifibrotic Drug', 'Associated lung cancer', 
                  'Other cancer', 'Liver disease', 'Hematologic Disease']]
     
@@ -146,9 +150,6 @@ def preprocess_input(df):
         bins = [0, 60, 70, 80, 100]
         labels = [0, 1, 2, 3]
         new_df['Age at diagnosis'] = pd.cut(new_df['Age at diagnosis'], bins=bins, labels=labels, right=False)
-
-    columns_to_drop = ['Death', 'Progressive disease', 'Necessity of transplantation']
-    new_df.drop(columns=[col for col in columns_to_drop if col in new_df.columns], inplace=True)
 
     return new_df
 
@@ -198,7 +199,9 @@ def predict_single_probabilities(input_array, tasks):
 def process_dataframe(df):
     # Create a copy of the DataFrame
     original_df = df.copy()
+    #borrar target variables
     
+
     # Preprocess the entire DataFrame
     processed_df = preprocess_input(df)
     input_array = processed_df.values.tolist()
@@ -208,6 +211,14 @@ def process_dataframe(df):
     # Append probabilities to the original DataFrame
     probabilities_df = pd.DataFrame(probabilities, columns=[f"{task}_probability" for task in tasks])
     result_df = original_df.reset_index(drop=True).join(probabilities_df)
+    if 'Death' in result_df.columns:
+        result_df.drop(columns=['Death'], inplace=True)
+    if 'Progressive disease' in result_df.columns:
+        result_df.drop(columns=['Progressive disease'], inplace=True)
+    if 'ProgressiveDisease' in result_df.columns:
+        result_df.drop(columns=['ProgressiveDisease'], inplace=True)
+    if 'Necessity of transplantation' in result_df.columns:
+        result_df.drop(columns=['Necessity of transplantation'], inplace=True)
     return result_df
 
 
