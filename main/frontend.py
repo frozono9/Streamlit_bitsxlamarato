@@ -66,10 +66,10 @@ options = {
 
 # Set up the Streamlit app layout
 st.set_page_config(page_title="Patient Data Collection", layout="wide")
-st.title("Recopilación de Datos de Pacientes para Enfermedades Pulmonares Intersticiales Fibrosantes")
+st.title("Calculadora de Enfermedades Pulmonares Intersticiales Fibrosantes (IPFs)")
 st.markdown("""
 Esta herramienta ayuda a recopilar y analizar datos de pacientes para el modelado predictivo de **Enfermedades Pulmonares Intersticiales Fibrosantes**.
-Complete el formulario a continuación y haga clic en **Enviar** para ver los resultados.
+Completa el formulario a continuación y haz clic en **Enviar** para ver los resultados.
 """)
 
 # Responses list
