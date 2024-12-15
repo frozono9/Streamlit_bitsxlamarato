@@ -329,11 +329,11 @@ if st.button("Enviar"):
         with st.spinner('Procesando datos...'):
             for task in tasks:
                 if task == "death":
-                    explainer_path = '../local/explainers/explainer_death.pkl'
+                    explainer_path = 'local/explainers/explainer_death.pkl'
                 elif task == "transplant":
-                    explainer_path = '../local/explainers/explainer_transplant.pkl'
+                    explainer_path = 'local/explainers/explainer_transplant.pkl'
                 elif task == "progressive":
-                    explainer_path = '../local/explainers/explainer_progressive.pkl'
+                    explainer_path = 'local/explainers/explainer_progressive.pkl'
                 importances = get_importances(processed_data, explainer_path)
                 plot_shap(importances, task)
             
