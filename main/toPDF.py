@@ -7,7 +7,7 @@ class MedicalReport(FPDF):
         self.set_font("Arial", "B", 12)
         self.cell(0, 10, "", align="R", ln=True)
         self.set_font("Arial", "B", 16)
-        self.image('bitxlamarato.png', 145, 18, 50)  # Replace 'logo.png' with a valid path
+        self.image('main/bitxlamarato.png', 145, 18, 50)  # Replace 'logo.png' with a valid path
         self.cell(0, 5, "Informe IPF", ln=True)
 
     def footer(self):
