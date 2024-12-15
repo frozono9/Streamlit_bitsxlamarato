@@ -1,3 +1,5 @@
+%pip install joblib
+
 import numpy as np
 import joblib
 from tensorflow.keras.models import load_model
