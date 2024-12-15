@@ -9,5 +9,5 @@ streamlit>=1.10.0
 fpdf
 matplotlib
 seaborn
-shap>=0.46.0
+shap>=0.40.0
 warnings
