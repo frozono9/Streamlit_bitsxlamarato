@@ -1,3 +1,16 @@
+%pip install joblib
+%pip install streamlit
+%pip install numpy
+%pip install pandas
+%pip install joblib
+%pip install tensorflow
+%pip install matplotlib
+%pip install seaborn
+%pip install scikit-learn
+%pip install shap
+%pip install json
+%pip install toPDF
+
 import streamlit as st
 from backend import process_input_data, predict_single_probabilities, get_importances, plot_shap
 import json
