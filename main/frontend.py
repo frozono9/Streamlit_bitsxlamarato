@@ -8,8 +8,7 @@
 %pip install seaborn
 %pip install scikit-learn
 %pip install shap
-%pip install json
-%pip install toPDF
+%pip install fpdf
 
 import streamlit as st
 from backend import process_input_data, predict_single_probabilities, get_importances, plot_shap
