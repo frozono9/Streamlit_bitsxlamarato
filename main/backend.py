@@ -10,14 +10,14 @@ import streamlit as st
 
  
 # Cargar los modelos guardados
-model_death = load_model("../local/models/model_death.h5")
-model_transplant = load_model("../local/models/model_transplant.h5")
-model_progressive = load_model("../local/models/model_progressive.h5")
+model_death = load_model("local/models/model_death.h5")
+model_transplant = load_model("local/models/model_transplant.h5")
+model_progressive = load_model("local/models/model_progressive.h5")
  
 # Cargar los escaladores guardados
-death_scaler = joblib.load("../local/scalers/death_scaler.pkl")
-transplant_scaler = joblib.load("../local/scalers/transplant_scaler.pkl")
-progressive_scaler = joblib.load("../local/scalers/progressive_scaler.pkl")
+death_scaler = joblib.load("local/scalers/death_scaler.pkl")
+transplant_scaler = joblib.load("local/scalers/transplant_scaler.pkl")
+progressive_scaler = joblib.load("local/scalers/progressive_scaler.pkl")
  
 # Mapear tareas a sus modelos y escaladores
 task_map = {
