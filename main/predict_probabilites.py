@@ -153,13 +153,13 @@ def preprocess_input(df):
     return new_df
 
 # Cargar los modelos y los escaladores guardados
-model_death = load_model("../local/models/model_death.h5")
-model_transplant = load_model("../local/models/model_transplant.h5")
-model_progressive = load_model("../local/models/model_progressive.h5")
+model_death = load_model("local/models/model_death.h5")
+model_transplant = load_model("local/models/model_transplant.h5")
+model_progressive = load_model("local/models/model_progressive.h5")
 
-death_scaler = joblib.load("../local/scalers/death_scaler.pkl")
-transplant_scaler = joblib.load("../local/scalers/transplant_scaler.pkl")
-progressive_scaler = joblib.load("../local/scalers/progressive_scaler.pkl")
+death_scaler = joblib.load("local/scalers/death_scaler.pkl")
+transplant_scaler = joblib.load("local/scalers/transplant_scaler.pkl")
+progressive_scaler = joblib.load("local/scalers/progressive_scaler.pkl")
 
 tasks = ["death", "transplant", "progressive"]
 
