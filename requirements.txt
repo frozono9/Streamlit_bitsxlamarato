@@ -1,3 +1,4 @@
+python>3.12.8
 numpy>=1.21.0
 scipy>=1.7.0
 scikit-learn>=1.0.0
@@ -9,5 +10,5 @@ streamlit>=1.10.0
 fpdf
 matplotlib
 seaborn
-shap
+shap>=0.46.0
 warnings
