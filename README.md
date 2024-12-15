@@ -19,3 +19,7 @@ Aquest projecte s'ha desenvolupat durant una hackathon de 40 hores organi tzada 
 - [Notebook Principal](./model.ipynb)
 - [Aplicació Streamlit (Frontend)](./main/frontend.py)
 - [Aplicació Streamlit (Backend)](./main/backend.py)
+
+### UI Final
+
+- [Aplicació Streamlit](https://porksinbits.streamlit.app/)
