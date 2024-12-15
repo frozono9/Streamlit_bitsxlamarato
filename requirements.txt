@@ -1,0 +1,11 @@
+numpy>=1.21.0
+scipy>=1.7.0
+scikit-learn>=1.0.0
+tensorflow>=2.10.0
+h5py>=3.6.0
+joblib>=1.1.0
+keras>=2.10.0
+streamlit>=1.10.0
+fpdf
+matplotlib
+seaborn
